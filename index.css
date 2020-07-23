@@ -1,0 +1,41 @@
+body {
+    overflow-x: hidden;
+    background: #fff;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.tiny {
+    font-size: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.info_card h4 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+header {
+    padding: 20px 0 0 0;
+    background: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submenu {
+    position: relative;
+    list-style-type: none;
+    width: 50%;
+}
+
+.submenu #cart {
+    display: none;
+}
