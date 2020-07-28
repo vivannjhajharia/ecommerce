@@ -39,3 +39,126 @@ header {
 .submenu #cart {
     display: none;
 }
+
+.submenu:hover #cart{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+}
+
+/* .empty{
+    padding: 10px;
+    background-color: crimson;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+} */
+
+.delete-course{
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+#list-courses{
+    padding: 30px 0px;
+}
+
+#header_courses{
+    margin-bottom: 30px;
+}
+
+.courses_container{
+    margin-top: 30px;
+    display: grid;
+    grid-gap: 25px;
+    max-width: 1080px;
+    margin: 0px auto;
+    padding: 0px 10px;
+}
+
+.course_item{
+    border: 1px solid black;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.course_elements{
+    width: 100%;
+}
+
+.info_card{
+    padding: 10px 10px;
+    position: relative;
+    height: 160px;
+}
+
+.info-card *{
+    margin-bottom: 10px;
+}
+
+.price{
+    text-decoration: line-through;
+    color: red;
+}
+
+.discount{
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 1.25rem;
+}
+
+.add-cart{
+    background: #00B2BD;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.08em;
+    position: absolute;
+    bottom: 0;
+}
+
+.add-cart:hover{
+    background: #00828a;
+    color: white;
+}
+
+.fa{
+    margin-bottom: 0;
+}
+
+@media (min-width: 750px){
+    header{
+        text-align: left;
+    }
+}
+
+@media (min-width: 472px) and (max-width: 767px){
+    .courses_container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 768px){
+    .courses_container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media all and (max-width: 969px){
+    .courses_container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
