@@ -87,8 +87,9 @@ header {
     padding: 0px 10px;
 }
 
-.course_item{
-    border: 1px solid black;
+.courses_item{
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
@@ -125,9 +126,9 @@ header {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.08em;
+    font-size: 0.8em;
     position: absolute;
-    bottom: 0;
+    bottom: 10;
 }
 
 .add-cart:hover{
@@ -139,26 +140,36 @@ header {
     margin-bottom: 0;
 }
 
-@media (min-width: 750px){
-    header{
+@media (min-width: 750px) {
+    header {
         text-align: left;
     }
 }
 
-@media (min-width: 472px) and (max-width: 767px){
-    .courses_container{
+@media (min-width: 472px) and (max-width: 767px) {
+    .courses_container {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media all and (max-width: 768px){
-    .courses_container{
+@media all and (min-width: 768px) {
+    .courses_container {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-@media all and (max-width: 969px){
-    .courses_container{
+@media all and (min-width: 969px) {
+    .courses_container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+}
+
+.course_img{
+    width: 265px;
+    height: 165px;
+    border-radius: 5px;
+}
+
+.material-icons{
+    color: gold;
 }
