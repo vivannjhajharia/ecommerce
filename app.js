@@ -1,12 +1,14 @@
 const cart = document.getElementById('cart');
 const courses = document.getElementById('list-courses');
-const listcourses = document.querySelector('#list-cart t-body');
-const emptycartbutton = document.getElementById('empty-cart');
+const listcourses = document.querySelector('#list-cart tbody');
+const emptycartBtn = document.getElementById('empty-cart');
 
-function loadeventlisteners() {
+loadEventListeners();
+
+function loadEventListeners() {
     courses.addEventListener('click', buycourse);
-    courses.addEventListener('click', deletecourse);
-    emptycartbutton.addEventListener('click', emptycart);
+    cart.addEventListener('click', deletecourse);
+    emptycartBtn.addEventListener('click', emptycart);
     document.addEventListener('DOMContentLoaded', readLocalStorage);
 }
 
@@ -38,7 +40,7 @@ function insertincart(course) {
     <td><a href="#" class="delete-course" data-id="${course.id}">X</a></td>
     `;
     listcourses.appendChild(row);
-    savecourseLocalStorage('course');
+    savecourseLocalStorage(course);
 }
 
 function deletecourse(e) {
@@ -64,24 +66,24 @@ function savecourseLocalStorage(course) {
     let courses;
     courses = getcoursesLocalStorage();
     courses.push(course);
-    localStorage.setitem('courses', JSON.stringify(course));
+    localStorage.setItem('courses', JSON.stringify(courses));
 }
 
 function getcoursesLocalStorage() {
-    let coursesls;
-    if(localStorage.getItem('courses'==null)) {
-        coursesls = [];
+    let coursesLS;
+    if(localStorage.getItem('courses') === null) {
+        coursesLS = [];
     }
     else {
-        coursesls = JSON.parse(localStorage.getItem('courses'));
+        coursesLS = JSON.parse(localStorage.getItem('courses'));
     }
-    return coursesls;
+    return coursesLS;
 }
 
 function readLocalStorage() {
-    let coursesls;
-    coursesls = getcoursesLocalStorage();
-    coursesls.forEach(function (course) {
+    let coursesLS;
+    coursesLS = getcoursesLocalStorage();
+    coursesLS.forEach(function (course) {
         const row = document.createElement('tr');
         row.innerHTML = `<td>
         <img src="${course.image}" width=100>
@@ -95,14 +97,14 @@ function readLocalStorage() {
 }
 
 function deletecourseLocalStorage(course) {
-    let coursesls;
-    coursesls = getcoursesLocalStorage();
-    coursesls.forEach(function (coursels, index) {
-        if(coursels.id===course) {
-            coursels.splice(index, 1);
+    let coursesLS;
+    coursesLS = getcoursesLocalStorage();
+    coursesLS.forEach(function (courseLS, index) {
+        if(courseLS.id === course) {
+            coursesLS.splice(index, 1);
         }
     });
-    localStorage.setitem('courses', JSON.stringify(course));
+    localStorage.setitem('courses', JSON.stringify(coursesLS));
 }
 
 function emptyLocalStorage() {
